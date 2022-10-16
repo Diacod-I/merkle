@@ -1,9 +1,7 @@
 from typing import List
 import hashlib
-import string
-import numpy as np
 class Node:
-    def __init__(self, left, right, value: str, content:str, is_copied=False) -> None:
+    def __init__(self, left, right, value: str, content, is_copied=False) -> None:
         self.left: Node = left
         self.right: Node = right
         self.value = value
@@ -18,6 +16,9 @@ class Node:
         return (str(self.value))
  
     def copy(self):
+        """
+        class copy function
+        """
         return Node(self.left, self.right, self.value, self.content, True)
        
 class MerkleTree:
@@ -66,11 +67,10 @@ class MerkleTree:
  
     def getRootHash(self) -> str:
       return self.root.value
-  
+
 class mixer:
-    def __init__(self,mtree):
-        mtree = MerkleTree(elems)
-    def mixmerkletree(elems) -> None:
+    def mixmerkletree() -> None:
+        elems = input("Enter value to generate a hash tree:")
         #as there are odd number of inputs, the last input is repeated
         print("Inputs: ")
         print(*elems, sep=" | ")
@@ -78,11 +78,6 @@ class mixer:
         mtree = MerkleTree(elems)
         print("Root Hash: "+mtree.getRootHash()+"\n")
         mtree.printTree()
-    def newData()->None:
-        data = str(input("Enter new value:"))
-        elems = np.append(data)
-        mtree = MerkleTree(elems)
  
-elems = np.random.choice(list(string.ascii_lowercase), size=(5))
-mixer.mixmerkletree(elems)
-mixer.newData()
+ 
+mixer.mixmerkletree()
