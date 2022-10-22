@@ -16,9 +16,6 @@ class Node:
         return (str(self.value))
  
     def copy(self):
-        """
-        class copy function
-        """
         return Node(self.left, self.right, self.value, self.content, True)
        
 class MerkleTree:
@@ -71,13 +68,14 @@ class MerkleTree:
 class mixer:
     def mixmerkletree() -> None:
         elems = input("Enter value to generate a hash tree:")
-        #as there are odd number of inputs, the last input is repeated
         print("Inputs: ")
         print(*elems, sep=" | ")
         print("")
         mtree = MerkleTree(elems)
         print("Root Hash: "+mtree.getRootHash()+"\n")
         mtree.printTree()
+class comparer(mixer):
+    pass
  
  
-mixer.mixmerkletree()
+comparer.mixmerkletree()
